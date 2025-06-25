@@ -41,7 +41,8 @@ exports.forgotPassword = async (req, res) => {
   try {
     const user = await User.findOne({ email });
     if (!user) return res.status(400).json({ error: 'No user with that email' });
-    const token = crypto.randomBytes(32).toString('hex');
+    // Generate a 6-digit numeric OTP
+    const token = Math.floor(100000 + Math.random() * 900000).toString();
     user.resetToken = token;
     user.resetTokenExpiry = Date.now() + 1000 * 60 * 60; // 1 hour
     await user.save();
