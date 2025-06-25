@@ -120,12 +120,24 @@ router.post("/upload_csv", auth, upload.single("csvfile"), async (req, res) => {
                       } catch (err) {
                         console.error('Cleanup error (uploads):', err);
                       }
-                      // Cleanup output JSON files
+                      // Cleanup output JSON and CSV files
                       try {
                         const outputDir = path.join(__dirname, '..', 'output');
-                        fs.readdirSync(outputDir).forEach(file => {
-                          const fp = path.join(outputDir, file);
-                          if (fs.lstatSync(fp).isFile()) fs.unlinkSync(fp);
+                        const filesToDelete = [
+                          'cleaned_log.csv',
+                          'common_paths.json',
+                          'step_durations.json',
+                          'case_durations.json',
+                          'sla_violations.json',
+                          'user_delays.json',
+                          'path_tree.json',
+                          'case_paths.json'
+                        ];
+                        filesToDelete.forEach(filename => {
+                          const filePath = path.join(outputDir, filename);
+                          if (fs.existsSync(filePath)) {
+                            fs.unlinkSync(filePath);
+                          }
                         });
                       } catch (err) {
                         console.error('Cleanup error (output):', err);
@@ -169,6 +181,26 @@ router.delete('/reset', auth, async (req, res) => {
     fs.readdirSync(uploadsDir).forEach(file => {
       fs.unlinkSync(path.join(uploadsDir, file));
     });
+    // Clear output analytics files
+    try {
+      const outputDir = path.join(__dirname, '..', 'output');
+      const filesToDelete = [
+        'cleaned_log.csv',
+        'common_paths.json',
+        'step_durations.json',
+        'case_durations.json',
+        'sla_violations.json',
+        'user_delays.json',
+        'path_tree.json',
+        'case_paths.json'
+      ];
+      filesToDelete.forEach(filename => {
+        const filePath = path.join(outputDir, filename);
+        if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+      });
+    } catch (err) {
+      console.error('Cleanup error (output files) in reset:', err);
+    }
      // Clear ml_backend output files
      const mlDir = path.join(__dirname, '..', 'ml_backend');
      ['aggregated_data.csv', 'heuristic_recommendations.csv', 'process_insights.txt'].forEach(filename => {
