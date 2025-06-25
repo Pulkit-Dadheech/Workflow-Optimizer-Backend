@@ -89,24 +89,6 @@
           "total_minutes": 60.0
         }
       ]
-    },
-    {
-      "case_id": "TKT006",
-      "total_minutes": 4470.0,
-      "roles": [
-        {
-          "role": "Developer",
-          "total_minutes": 2040.0
-        },
-        {
-          "role": "QA",
-          "total_minutes": 2370.0
-        },
-        {
-          "role": "Scrum Master",
-          "total_minutes": 60.0
-        }
-      ]
     }
   ],
   "slowest_case": {

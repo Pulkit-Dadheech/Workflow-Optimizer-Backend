@@ -198,7 +198,7 @@ def save_cleaned_log(df, output_path="output/cleaned_log.csv"):
 def main():
    print("Enterprise Workflow Optimizer (Full Mode)")
    with open('uploads/latest.txt', 'r') as file:
-    content = file.read()
+    content = file.read().strip()
     path = content
     print(content)
 

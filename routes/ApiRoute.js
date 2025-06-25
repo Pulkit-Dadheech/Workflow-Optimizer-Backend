@@ -1,70 +1,69 @@
 // routes/ApiRoute.js
 const express = require("express");
 const router = express.Router();
-const path = require("path");
+const auth = require('../middleware/auth');
+const UserData = require('../models/UserData');
 
-router.get("/common_paths", (req, res) => {
-  const common_paths = path.join(__dirname, "..", "output", "common_paths.json")
+// Protect all API routes
+router.use(auth);
 
-  res.sendFile(common_paths, (err) => {
-    if (err) {
-      console.error("Error sending file:", err);
-      res.status(500).send("Failed to send file.");
-    }
-  });
+// Common paths
+router.get("/common_paths", async (req, res) => {
+  try {
+    const data = await UserData.findOne({ user: req.user.userId }).lean();
+    if (!data) return res.status(404).json({ error: "No data found" });
+    res.json(data.commonPaths);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
-router.get("/step_durations", (req, res) => {
-  const step_durations = path.join(__dirname, "..", "output", "step_durations.json")
 
-  res.sendFile(step_durations, (err) => {
-    if (err) {
-      console.error("Error sending file:", err);
-      res.status(500).send("Failed to send file.");
-    }
-  });
+// Step durations
+router.get("/step_durations", async (req, res) => {
+  try {
+    const data = await UserData.findOne({ user: req.user.userId }).lean();
+    if (!data) return res.status(404).json({ error: "No data found" });
+    res.json(data.stepDurations);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
-router.get("/user_delays", (req, res) => {
-  const user_delays = path.join(__dirname, "..", "output", "user_delays.json")
 
-  res.sendFile(user_delays, (err) => {
-    if (err) {
-      console.error("Error sending file:", err);
-      res.status(500).send("Failed to send file.");
-    }
-  });
+// Case durations
+router.get("/case_durations", async (req, res) => {
+  try {
+    const data = await UserData.findOne({ user: req.user.userId }).lean();
+    if (!data) return res.status(404).json({ error: "No data found" });
+    // Return only the array of cases
+    const cd = data.caseDurations;
+    res.json(Array.isArray(cd) ? cd : (cd.cases || []));
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
-router.get("/sla_violations", (req, res) => {
-  const sla_violations = path.join(__dirname, "..", "output", "sla_violations.json")
 
-  res.sendFile(sla_violations, (err) => {
-    if (err) {
-      console.error("Error sending file:", err);
-      res.status(500).send("Failed to send file.");
-    }
-  });
+// SLA violations
+router.get("/sla_violations", async (req, res) => {
+  try {
+    const data = await UserData.findOne({ user: req.user.userId }).lean();
+    if (!data) return res.status(404).json({ error: "No data found" });
+    res.json(data.slaViolations);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
-router.get("/case_durations", (req, res) => {
-  const case_durations = path.join(__dirname, "..", "output", "case_durations.json")
 
-  res.sendFile(case_durations, (err) => {
-    if (err) {
-      console.error("Error sending file:", err);
-      res.status(500).send("Failed to send file.");
-    }
-  });
+// User delays
+router.get("/user_delays", async (req, res) => {
+  try {
+    const data = await UserData.findOne({ user: req.user.userId }).lean();
+    if (!data) return res.status(404).json({ error: "No data found" });
+    // Return only the user_stats array
+    const ud = data.userDelays;
+    res.json(Array.isArray(ud) ? ud : (ud.user_stats || []));
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
-// router.get("/:function", (req, res) => {
-//   const fileName = `${req.params.function}.json`
-//   const filePath = path.join(__dirname, "..", "output", fileName)
-
-//   res.sendFile(filePath, (err) => {
-//     if (err) {
-//       console.error("Error sending file:", err);
-//       res.status(500).send("Failed to send file.");
-//     }
-//   });
-// });
-
-
 
 module.exports = router;

@@ -1,8 +1,10 @@
-import jwt from "jsonwebtoken";
-const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret";
+const jwt = require("jsonwebtoken");
+const JWT_SECRET = process.env.JWT_SECRET || "changeme";
 
-export function authenticateToken(req, res, next) {
-    const token = req.cookies.token;
+function authenticateToken(req, res, next) {
+    // Check Authorization header or cookies
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.startsWith('Bearer ') ? authHeader.split(' ')[1] : req.cookies && req.cookies.token;
     if (!token) return res.sendStatus(401);
     jwt.verify(token, JWT_SECRET, (err, user) => {
         if (err) return res.sendStatus(403);
@@ -10,3 +12,5 @@ export function authenticateToken(req, res, next) {
         next();
     });
 }
+
+module.exports = authenticateToken;

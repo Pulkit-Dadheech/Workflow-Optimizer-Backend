@@ -3,41 +3,42 @@ const path = require("path");
 const fs = require("fs");
 const router = express.Router();
 const csv = require("csv-parser");
+const auth = require('../middleware/auth');
+const UserData = require('../models/UserData');
 
-// Route to fetch recommendations
-router.get("/recommendations", (req, res) => {
-  const recPath = path.join(__dirname, "..", "ml_backend", "heuristic_recommendations.csv");
-  if (!fs.existsSync(recPath)) {
-    return res.status(404).json({ error: "Recommendations not found" });
+// Route to fetch user data
+router.get('/userdata', auth, async (req, res) => {
+  try {
+    console.log('RecommendationRoute: fetching userdata for', req.user.userId);
+    const data = await UserData.findOne({ user: req.user.userId }).lean();
+    console.log('RecommendationRoute: data found:', data);
+    if (!data) return res.status(404).json({ error: 'No data found for user' });
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
-  const results = [];
-  fs.createReadStream(recPath)
-    .pipe(csv())
-    .on("data", (data) => results.push(data))
-    .on("end", () => {
-      res.json(results);
-    });
 });
 
-// Route to fetch process/user/activity insights
-router.get("/insights", (req, res) => {
-  const insightsPath = path.join(__dirname, "..", "ml_backend", "process_insights.txt");
-  if (!fs.existsSync(insightsPath)) {
-    return res.status(404).json({ error: "Insights not found" });
+// Route to fetch only recommendations
+router.get('/recommendations', auth, async (req, res) => {
+  try {
+    const data = await UserData.findOne({ user: req.user.userId }).lean();
+    if (!data) return res.status(404).json({ error: 'No recommendations found for user' });
+    res.json(data.recommendations || []);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
-  const data = fs.readFileSync(insightsPath, "utf-8");
-  // Split into sections
-  const process = [];
-  const user = [];
-  const activity = [];
-  let section = null;
-  data.split(/\r?\n/).forEach((line) => {
-    if (line.includes("Process-level Insights")) section = process;
-    else if (line.includes("User-level Insights")) section = user;
-    else if (line.includes("Activity-level Insights")) section = activity;
-    else if (line.trim() && section) section.push(line.trim());
-  });
-  res.json({ process, user, activity });
+});
+
+// Route to fetch only insights
+router.get('/insights', auth, async (req, res) => {
+  try {
+    const data = await UserData.findOne({ user: req.user.userId }).lean();
+    if (!data) return res.status(404).json({ error: 'No insights found for user' });
+    res.json(data.insights || { process: [], user: [], activity: [] });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 module.exports = router;

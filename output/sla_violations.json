@@ -2,11 +2,11 @@
   {
     "case_id": "TKT001",
     "activity": "Assigned",
-    "user": "Sara",
+    "user": "sera",
     "role": "Scrum Master",
     "duration_minutes": 60,
     "sla_limit": 30,
-    "story_points": 5
+    "story_points": 5.0
   },
   {
     "case_id": "TKT001",
@@ -15,7 +15,7 @@
     "role": "Developer",
     "duration_minutes": 330,
     "sla_limit": 60,
-    "story_points": 5
+    "story_points": 5.0
   },
   {
     "case_id": "TKT001",
@@ -24,7 +24,7 @@
     "role": "QA",
     "duration_minutes": 990,
     "sla_limit": 180,
-    "story_points": 5
+    "story_points": 5.0
   },
   {
     "case_id": "TKT001",
@@ -33,16 +33,16 @@
     "role": "QA",
     "duration_minutes": 150,
     "sla_limit": 60,
-    "story_points": 5
+    "story_points": 5.0
   },
   {
     "case_id": "TKT002",
     "activity": "Assigned",
-    "user": "Sara",
+    "user": "sera",
     "role": "Scrum Master",
     "duration_minutes": 105,
     "sla_limit": 30,
-    "story_points": 8
+    "story_points": 8.0
   },
   {
     "case_id": "TKT002",
@@ -51,7 +51,7 @@
     "role": "Developer",
     "duration_minutes": 1320,
     "sla_limit": 60,
-    "story_points": 8
+    "story_points": 8.0
   },
   {
     "case_id": "TKT002",
@@ -60,7 +60,7 @@
     "role": "QA",
     "duration_minutes": 240,
     "sla_limit": 180,
-    "story_points": 8
+    "story_points": 8.0
   },
   {
     "case_id": "TKT002",
@@ -69,7 +69,7 @@
     "role": "QA",
     "duration_minutes": 150,
     "sla_limit": 120,
-    "story_points": 8
+    "story_points": 8.0
   },
   {
     "case_id": "TKT002",
@@ -78,7 +78,7 @@
     "role": "Developer",
     "duration_minutes": 990,
     "sla_limit": 240,
-    "story_points": 8
+    "story_points": 8.0
   },
   {
     "case_id": "TKT002",
@@ -87,7 +87,7 @@
     "role": "Developer",
     "duration_minutes": 270,
     "sla_limit": 60,
-    "story_points": 8
+    "story_points": 8.0
   },
   {
     "case_id": "TKT002",
@@ -96,7 +96,7 @@
     "role": "QA",
     "duration_minutes": 1110,
     "sla_limit": 180,
-    "story_points": 8
+    "story_points": 8.0
   },
   {
     "case_id": "TKT002",
@@ -105,16 +105,16 @@
     "role": "QA",
     "duration_minutes": 150,
     "sla_limit": 60,
-    "story_points": 8
+    "story_points": 8.0
   },
   {
     "case_id": "TKT003",
     "activity": "Assigned",
-    "user": "Sara",
+    "user": "sera",
     "role": "Scrum Master",
     "duration_minutes": 90,
     "sla_limit": 30,
-    "story_points": 3
+    "story_points": 3.0
   },
   {
     "case_id": "TKT003",
@@ -123,7 +123,7 @@
     "role": "Developer",
     "duration_minutes": 240,
     "sla_limit": 60,
-    "story_points": 3
+    "story_points": 3.0
   },
   {
     "case_id": "TKT003",
@@ -132,16 +132,16 @@
     "role": "QA",
     "duration_minutes": 870,
     "sla_limit": 180,
-    "story_points": 3
+    "story_points": 3.0
   },
   {
     "case_id": "TKT004",
     "activity": "Assigned",
-    "user": "Sara",
+    "user": "sera",
     "role": "Scrum Master",
     "duration_minutes": 90,
     "sla_limit": 30,
-    "story_points": 13
+    "story_points": 13.0
   },
   {
     "case_id": "TKT004",
@@ -150,7 +150,7 @@
     "role": "Developer",
     "duration_minutes": 3210,
     "sla_limit": 60,
-    "story_points": 13
+    "story_points": 13.0
   },
   {
     "case_id": "TKT004",
@@ -159,7 +159,7 @@
     "role": "QA",
     "duration_minutes": 1020,
     "sla_limit": 180,
-    "story_points": 13
+    "story_points": 13.0
   },
   {
     "case_id": "TKT004",
@@ -168,16 +168,16 @@
     "role": "QA",
     "duration_minutes": 240,
     "sla_limit": 60,
-    "story_points": 13
+    "story_points": 13.0
   },
   {
     "case_id": "TKT005",
     "activity": "Assigned",
-    "user": "Sara",
+    "user": "sera",
     "role": "Scrum Master",
     "duration_minutes": 60,
     "sla_limit": 30,
-    "story_points": 5
+    "story_points": 5.0
   },
   {
     "case_id": "TKT005",
@@ -186,7 +186,7 @@
     "role": "Developer",
     "duration_minutes": 300,
     "sla_limit": 60,
-    "story_points": 5
+    "story_points": 5.0
   },
   {
     "case_id": "TKT005",
@@ -195,60 +195,6 @@
     "role": "QA",
     "duration_minutes": 1020,
     "sla_limit": 180,
-    "story_points": 5
-  },
-  {
-    "case_id": "TKT006",
-    "activity": "Assigned",
-    "user": "Sara",
-    "role": "Scrum Master",
-    "duration_minutes": 60,
-    "sla_limit": 30,
-    "story_points": 8
-  },
-  {
-    "case_id": "TKT006",
-    "activity": "Resolved",
-    "user": "Dev_John",
-    "role": "Developer",
-    "duration_minutes": 1620,
-    "sla_limit": 60,
-    "story_points": 8
-  },
-  {
-    "case_id": "TKT006",
-    "activity": "QA Review",
-    "user": "QA_Eva",
-    "role": "QA",
-    "duration_minutes": 1200,
-    "sla_limit": 180,
-    "story_points": 8
-  },
-  {
-    "case_id": "TKT006",
-    "activity": "Reopened",
-    "user": "QA_Eva",
-    "role": "QA",
-    "duration_minutes": 150,
-    "sla_limit": 120,
-    "story_points": 8
-  },
-  {
-    "case_id": "TKT006",
-    "activity": "Resolved",
-    "user": "Dev_John",
-    "role": "Developer",
-    "duration_minutes": 240,
-    "sla_limit": 60,
-    "story_points": 8
-  },
-  {
-    "case_id": "TKT006",
-    "activity": "QA Review",
-    "user": "QA_Eva",
-    "role": "QA",
-    "duration_minutes": 960,
-    "sla_limit": 180,
-    "story_points": 8
+    "story_points": 5.0
   }
 ]
