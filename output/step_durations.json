@@ -1,0 +1,38 @@
+[
+  {
+    "step": "Assigned",
+    "average_minutes": 77.5,
+    "average_story_points": 7.0,
+    "bottleneck": true
+  },
+  {
+    "step": "Closed",
+    "average_minutes": 117.5,
+    "average_story_points": 7.0,
+    "bottleneck": true
+  },
+  {
+    "step": "In Progress",
+    "average_minutes": 228.75,
+    "average_story_points": 7.25,
+    "bottleneck": true
+  },
+  {
+    "step": "QA Review",
+    "average_minutes": 926.25,
+    "average_story_points": 7.25,
+    "bottleneck": true
+  },
+  {
+    "step": "Reopened",
+    "average_minutes": 150.0,
+    "average_story_points": 8.0,
+    "bottleneck": true
+  },
+  {
+    "step": "Resolved",
+    "average_minutes": 941.25,
+    "average_story_points": 7.25,
+    "bottleneck": true
+  }
+]

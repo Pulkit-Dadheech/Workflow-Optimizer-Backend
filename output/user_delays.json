@@ -1,0 +1,187 @@
+{
+  "user_stats": [
+    {
+      "user": "Dev_Alice",
+      "role": "Developer",
+      "activity": "In Progress",
+      "average_minutes": 140.0,
+      "average_story_points": 4.33,
+      "occurrences": 3,
+      "cases": [
+        "TKT001",
+        "TKT003",
+        "TKT005"
+      ],
+      "more_cases": false
+    },
+    {
+      "user": "Dev_Alice",
+      "role": "Developer",
+      "activity": "Resolved",
+      "average_minutes": 290.0,
+      "average_story_points": 4.33,
+      "occurrences": 3,
+      "cases": [
+        "TKT001",
+        "TKT003",
+        "TKT005"
+      ],
+      "more_cases": false
+    },
+    {
+      "user": "Dev_John",
+      "role": "Developer",
+      "activity": "In Progress",
+      "average_minutes": 282.0,
+      "average_story_points": 9.0,
+      "occurrences": 5,
+      "cases": [
+        "TKT002",
+        "TKT004",
+        "TKT006"
+      ],
+      "more_cases": false
+    },
+    {
+      "user": "Dev_John",
+      "role": "Developer",
+      "activity": "Resolved",
+      "average_minutes": 1332.0,
+      "average_story_points": 9.0,
+      "occurrences": 5,
+      "cases": [
+        "TKT002",
+        "TKT004",
+        "TKT006"
+      ],
+      "more_cases": false
+    },
+    {
+      "user": "QA_Bob",
+      "role": "QA",
+      "activity": "Closed",
+      "average_minutes": 85.0,
+      "average_story_points": 4.33,
+      "occurrences": 3,
+      "cases": [
+        "TKT001",
+        "TKT003",
+        "TKT005"
+      ],
+      "more_cases": false
+    },
+    {
+      "user": "QA_Bob",
+      "role": "QA",
+      "activity": "QA Review",
+      "average_minutes": 960.0,
+      "average_story_points": 4.33,
+      "occurrences": 3,
+      "cases": [
+        "TKT001",
+        "TKT003",
+        "TKT005"
+      ],
+      "more_cases": false
+    },
+    {
+      "user": "QA_Eva",
+      "role": "QA",
+      "activity": "Closed",
+      "average_minutes": 150.0,
+      "average_story_points": 9.67,
+      "occurrences": 3,
+      "cases": [
+        "TKT002",
+        "TKT004",
+        "TKT006"
+      ],
+      "more_cases": false
+    },
+    {
+      "user": "QA_Eva",
+      "role": "QA",
+      "activity": "QA Review",
+      "average_minutes": 906.0,
+      "average_story_points": 9.0,
+      "occurrences": 5,
+      "cases": [
+        "TKT002",
+        "TKT004",
+        "TKT006"
+      ],
+      "more_cases": false
+    },
+    {
+      "user": "QA_Eva",
+      "role": "QA",
+      "activity": "Reopened",
+      "average_minutes": 150.0,
+      "average_story_points": 8.0,
+      "occurrences": 2,
+      "cases": [
+        "TKT002",
+        "TKT006"
+      ],
+      "more_cases": false
+    },
+    {
+      "user": "Sara",
+      "role": "Scrum Master",
+      "activity": "Assigned",
+      "average_minutes": 77.5,
+      "average_story_points": 7.0,
+      "occurrences": 6,
+      "cases": [
+        "TKT001",
+        "TKT002",
+        "TKT003",
+        "TKT004",
+        "TKT005"
+      ],
+      "more_cases": true
+    }
+  ],
+  "slowest_user": {
+    "user": "Dev_John",
+    "average_minutes": 807.0
+  },
+  "slowest_roles": [
+    {
+      "role": "Developer",
+      "slowest_user": "Dev_John",
+      "average_minutes": 807.0,
+      "case_ids": [
+        "TKT002",
+        "TKT004",
+        "TKT006"
+      ],
+      "more_cases": false
+    },
+    {
+      "role": "QA",
+      "slowest_user": "QA_Eva",
+      "average_minutes": 528.0,
+      "case_ids": [
+        "TKT002",
+        "TKT004",
+        "TKT006"
+      ],
+      "more_cases": false
+    },
+    {
+      "role": "Scrum Master",
+      "slowest_user": "Sara",
+      "average_minutes": 77.5,
+      "case_ids": [
+        "TKT001",
+        "TKT002",
+        "TKT003",
+        "TKT004",
+        "TKT005",
+        "TKT006"
+      ],
+      "more_cases": false
+    }
+  ]
+}

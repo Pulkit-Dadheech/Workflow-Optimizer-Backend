@@ -1,0 +1,10 @@
+[
+  {
+    "path": "Created -> Assigned -> In Progress -> Resolved -> QA Review -> Closed",
+    "count": 4
+  },
+  {
+    "path": "Created -> Assigned -> In Progress -> Resolved -> QA Review -> Reopened -> In Progress -> Resolved -> QA Review -> Closed",
+    "count": 2
+  }
+]

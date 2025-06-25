@@ -1,0 +1,50 @@
+case_id,timestamp,activity,user,role,story_points
+TKT001,2025-06-01 08:00:00,Created,Sara,Scrum Master,5
+TKT001,2025-06-01 09:00:00,Assigned,Sara,Scrum Master,5
+TKT001,2025-06-01 11:30:00,In Progress,Dev_Alice,Developer,5
+TKT001,2025-06-01 17:00:00,Resolved,Dev_Alice,Developer,5
+TKT001,2025-06-02 09:30:00,QA Review,QA_Bob,QA,5
+TKT001,2025-06-02 12:00:00,Closed,QA_Bob,QA,5
+
+TKT002,2025-06-01 08:15:00,Created,Sara,Scrum Master,8
+TKT002,2025-06-01 10:00:00,Assigned,Sara,Scrum Master,8
+TKT002,2025-06-01 13:00:00,In Progress,Dev_John,Developer,8
+TKT002,2025-06-02 11:00:00,Resolved,Dev_John,Developer,8
+TKT002,2025-06-02 15:00:00,QA Review,QA_Eva,QA,8
+TKT002,2025-06-02 17:30:00,Reopened,QA_Eva,QA,8
+TKT002,2025-06-03 10:00:00,In Progress,Dev_John,Developer,8
+TKT002,2025-06-03 14:30:00,Resolved,Dev_John,Developer,8
+TKT002,2025-06-04 09:00:00,QA Review,QA_Eva,QA,8
+TKT002,2025-06-04 11:30:00,Closed,QA_Eva,QA,8
+
+TKT003,2025-06-01 09:00:00,Created,Sara,Scrum Master,3
+TKT003,2025-06-01 10:30:00,Assigned,Sara,Scrum Master,3
+TKT003,2025-06-01 14:00:00,In Progress,Dev_Alice,Developer,3
+TKT003,2025-06-01 18:00:00,Resolved,Dev_Alice,Developer,3
+TKT003,2025-06-02 08:30:00,QA Review,QA_Bob,QA,3
+TKT003,2025-06-02 09:15:00,Closed,QA_Bob,QA,3
+
+TKT004,2025-06-02 08:00:00,Created,Sara,Scrum Master,13
+TKT004,2025-06-02 09:30:00,Assigned,Sara,Scrum Master,13
+TKT004,2025-06-02 10:30:00,In Progress,Dev_John,Developer,13
+TKT004,2025-06-04 16:00:00,Resolved,Dev_John,Developer,13
+TKT004,2025-06-05 09:00:00,QA Review,QA_Eva,QA,13
+TKT004,2025-06-05 13:00:00,Closed,QA_Eva,QA,13
+
+TKT005,2025-06-03 09:00:00,Created,Sara,Scrum Master,5
+TKT005,2025-06-03 10:00:00,Assigned,Sara,Scrum Master,5
+TKT005,2025-06-03 11:00:00,In Progress,Dev_Alice,Developer,5
+TKT005,2025-06-03 16:00:00,Resolved,Dev_Alice,Developer,5
+TKT005,2025-06-04 09:00:00,QA Review,QA_Bob,QA,5
+TKT005,2025-06-04 10:00:00,Closed,QA_Bob,QA,5
+
+TKT006,2025-06-03 08:30:00,Created,Sara,Scrum Master,8
+TKT006,2025-06-03 09:30:00,Assigned,Sara,Scrum Master,8
+TKT006,2025-06-03 11:00:00,In Progress,Dev_John,Developer,8
+TKT006,2025-06-04 14:00:00,Resolved,Dev_John,Developer,8
+TKT006,2025-06-05 10:00:00,QA Review,QA_Eva,QA,8
+TKT006,2025-06-05 12:30:00,Reopened,QA_Eva,QA,8
+TKT006,2025-06-05 14:00:00,In Progress,Dev_John,Developer,8
+TKT006,2025-06-05 18:00:00,Resolved,Dev_John,Developer,8
+TKT006,2025-06-06 10:00:00,QA Review,QA_Eva,QA,8
+TKT006,2025-06-06 11:00:00,Closed,QA_Eva,QA,8

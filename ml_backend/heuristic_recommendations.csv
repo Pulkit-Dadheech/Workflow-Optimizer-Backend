@@ -1,0 +1,6 @@
+case_id,total_steps,unique_users,unique_roles,total_story_points,num_reopens,num_qareviews,num_resolved,num_closed,total_duration_hours,heuristic_recommendation,recommendation_text
+TKT001,6,3,3,5.0,0,1,1,1,28.0,Long cycle time,This ticket took significantly longer than average to complete. Consider investigating process delays.
+TKT002,10,3,3,8.0,1,2,2,1,75.25,Long cycle time; Too many steps,"This ticket took significantly longer than average to complete. Consider investigating process delays. This ticket required an unusually high number of workflow steps, which may indicate process complexity."
+TKT003,6,3,3,3.0,0,1,1,1,24.25,Long cycle time,This ticket took significantly longer than average to complete. Consider investigating process delays.
+TKT004,6,3,3,13.0,0,1,1,1,77.0,Long cycle time,This ticket took significantly longer than average to complete. Consider investigating process delays.
+TKT005,6,3,3,5.0,0,1,1,1,25.0,Long cycle time,This ticket took significantly longer than average to complete. Consider investigating process delays.

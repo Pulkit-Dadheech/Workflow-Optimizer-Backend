@@ -1,0 +1,45 @@
+case_id,timestamp,activity,user,role,story_points,step,duration,duration_minutes,duration_mins
+TKT001,2025-06-01 08:00:00,Created,Sara,Scrum Master,5,0,,,
+TKT001,2025-06-01 09:00:00,Assigned,Sara,Scrum Master,5,1,0 days 01:00:00,60.0,60.0
+TKT001,2025-06-01 11:30:00,In Progress,Dev_Alice,Developer,5,2,0 days 02:30:00,150.0,150.0
+TKT001,2025-06-01 17:00:00,Resolved,Dev_Alice,Developer,5,3,0 days 05:30:00,330.0,330.0
+TKT001,2025-06-02 09:30:00,QA Review,QA_Bob,QA,5,4,0 days 16:30:00,990.0,990.0
+TKT001,2025-06-02 12:00:00,Closed,QA_Bob,QA,5,5,0 days 02:30:00,150.0,150.0
+TKT002,2025-06-01 08:15:00,Created,Sara,Scrum Master,8,0,,,
+TKT002,2025-06-01 10:00:00,Assigned,Sara,Scrum Master,8,1,0 days 01:45:00,105.0,105.0
+TKT002,2025-06-01 13:00:00,In Progress,Dev_John,Developer,8,2,0 days 03:00:00,180.0,180.0
+TKT002,2025-06-02 11:00:00,Resolved,Dev_John,Developer,8,3,0 days 22:00:00,1320.0,1320.0
+TKT002,2025-06-02 15:00:00,QA Review,QA_Eva,QA,8,4,0 days 04:00:00,240.0,240.0
+TKT002,2025-06-02 17:30:00,Reopened,QA_Eva,QA,8,5,0 days 02:30:00,150.0,150.0
+TKT002,2025-06-03 10:00:00,In Progress,Dev_John,Developer,8,6,0 days 16:30:00,990.0,990.0
+TKT002,2025-06-03 14:30:00,Resolved,Dev_John,Developer,8,7,0 days 04:30:00,270.0,270.0
+TKT002,2025-06-04 09:00:00,QA Review,QA_Eva,QA,8,8,0 days 18:30:00,1110.0,1110.0
+TKT002,2025-06-04 11:30:00,Closed,QA_Eva,QA,8,9,0 days 02:30:00,150.0,150.0
+TKT003,2025-06-01 09:00:00,Created,Sara,Scrum Master,3,0,,,
+TKT003,2025-06-01 10:30:00,Assigned,Sara,Scrum Master,3,1,0 days 01:30:00,90.0,90.0
+TKT003,2025-06-01 14:00:00,In Progress,Dev_Alice,Developer,3,2,0 days 03:30:00,210.0,210.0
+TKT003,2025-06-01 18:00:00,Resolved,Dev_Alice,Developer,3,3,0 days 04:00:00,240.0,240.0
+TKT003,2025-06-02 08:30:00,QA Review,QA_Bob,QA,3,4,0 days 14:30:00,870.0,870.0
+TKT003,2025-06-02 09:15:00,Closed,QA_Bob,QA,3,5,0 days 00:45:00,45.0,45.0
+TKT004,2025-06-02 08:00:00,Created,Sara,Scrum Master,13,0,,,
+TKT004,2025-06-02 09:30:00,Assigned,Sara,Scrum Master,13,1,0 days 01:30:00,90.0,90.0
+TKT004,2025-06-02 10:30:00,In Progress,Dev_John,Developer,13,2,0 days 01:00:00,60.0,60.0
+TKT004,2025-06-04 16:00:00,Resolved,Dev_John,Developer,13,3,2 days 05:30:00,3210.0,3210.0
+TKT004,2025-06-05 09:00:00,QA Review,QA_Eva,QA,13,4,0 days 17:00:00,1020.0,1020.0
+TKT004,2025-06-05 13:00:00,Closed,QA_Eva,QA,13,5,0 days 04:00:00,240.0,240.0
+TKT005,2025-06-03 09:00:00,Created,Sara,Scrum Master,5,0,,,
+TKT005,2025-06-03 10:00:00,Assigned,Sara,Scrum Master,5,1,0 days 01:00:00,60.0,60.0
+TKT005,2025-06-03 11:00:00,In Progress,Dev_Alice,Developer,5,2,0 days 01:00:00,60.0,60.0
+TKT005,2025-06-03 16:00:00,Resolved,Dev_Alice,Developer,5,3,0 days 05:00:00,300.0,300.0
+TKT005,2025-06-04 09:00:00,QA Review,QA_Bob,QA,5,4,0 days 17:00:00,1020.0,1020.0
+TKT005,2025-06-04 10:00:00,Closed,QA_Bob,QA,5,5,0 days 01:00:00,60.0,60.0
+TKT006,2025-06-03 08:30:00,Created,Sara,Scrum Master,8,0,,,
+TKT006,2025-06-03 09:30:00,Assigned,Sara,Scrum Master,8,1,0 days 01:00:00,60.0,60.0
+TKT006,2025-06-03 11:00:00,In Progress,Dev_John,Developer,8,2,0 days 01:30:00,90.0,90.0
+TKT006,2025-06-04 14:00:00,Resolved,Dev_John,Developer,8,3,1 days 03:00:00,1620.0,1620.0
+TKT006,2025-06-05 10:00:00,QA Review,QA_Eva,QA,8,4,0 days 20:00:00,1200.0,1200.0
+TKT006,2025-06-05 12:30:00,Reopened,QA_Eva,QA,8,5,0 days 02:30:00,150.0,150.0
+TKT006,2025-06-05 14:00:00,In Progress,Dev_John,Developer,8,6,0 days 01:30:00,90.0,90.0
+TKT006,2025-06-05 18:00:00,Resolved,Dev_John,Developer,8,7,0 days 04:00:00,240.0,240.0
+TKT006,2025-06-06 10:00:00,QA Review,QA_Eva,QA,8,8,0 days 16:00:00,960.0,960.0
+TKT006,2025-06-06 11:00:00,Closed,QA_Eva,QA,8,9,0 days 01:00:00,60.0,60.0
