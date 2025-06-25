@@ -86,11 +86,15 @@ router.post("/upload_csv", auth, upload.single("csvfile"), async (req, res) => {
                   let caseDurations = {};
                   let slaViolations = [];
                   let userDelays = {};
+                  let pathTree = [];
+                  let casePaths = [];
                   try { commonPaths = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'output', 'common_paths.json'), 'utf-8')); } catch {}
                   try { stepDurations = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'output', 'step_durations.json'), 'utf-8')); } catch {}
                   try { caseDurations = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'output', 'case_durations.json'), 'utf-8')); } catch {}
                   try { slaViolations = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'output', 'sla_violations.json'), 'utf-8')); } catch {}
                   try { userDelays = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'output', 'user_delays.json'), 'utf-8')); } catch {}
+                  try { pathTree = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'output', 'path_tree.json'), 'utf-8'));  } catch {}
+                  try { casePaths = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'output', 'case_paths.json'), 'utf-8')); } catch {}
                   // Build payload
                   const payload = {
                     recommendations: recs,
@@ -100,15 +104,47 @@ router.post("/upload_csv", auth, upload.single("csvfile"), async (req, res) => {
                     caseDurations,
                     slaViolations,
                     userDelays,
+                    pathTree,
+                    casePaths,
                     updatedAt: new Date()
                   };
                   console.log('UploadRoute: upserting with full payload', payload);
                   UserData.findOneAndUpdate({ user: req.user.userId }, payload, { upsert: true, new: true })
-                    .then(result => res.json({ message: 'CSV uploaded and data saved', data: result }))
-                    .catch(dbErr => {
-                      console.error('DB upsert error', dbErr);
-                      res.status(500).json({ error: 'DB upsert failed', details: dbErr.message });
-                    });
+                    .then(result => {
+                      res.json({ message: 'CSV uploaded and data saved', data: result });
+                      // Cleanup uploaded CSV and latest.txt
+                      try {
+                        if (fs.existsSync(req.file.path)) fs.unlinkSync(req.file.path);
+                        const latestFile = path.join(__dirname, '..', 'uploads', 'latest.txt');
+                        if (fs.existsSync(latestFile)) fs.unlinkSync(latestFile);
+                      } catch (err) {
+                        console.error('Cleanup error (uploads):', err);
+                      }
+                      // Cleanup output JSON files
+                      try {
+                        const outputDir = path.join(__dirname, '..', 'output');
+                        fs.readdirSync(outputDir).forEach(file => {
+                          const fp = path.join(outputDir, file);
+                          if (fs.lstatSync(fp).isFile()) fs.unlinkSync(fp);
+                        });
+                      } catch (err) {
+                        console.error('Cleanup error (output):', err);
+                      }
+                      // Cleanup ml_backend intermediate files
+                      try {
+                        const mlBackendDir = path.join(__dirname, '..', 'ml_backend');
+                        ['aggregated_data.csv', 'heuristic_recommendations.csv', 'process_insights.txt'].forEach(fn => {
+                          const fp = path.join(mlBackendDir, fn);
+                          if (fs.existsSync(fp)) fs.unlinkSync(fp);
+                        });
+                      } catch (err) {
+                        console.error('Cleanup error (ml_backend):', err);
+                      }
+                    })
+                     .catch(dbErr => {
+                       console.error('DB upsert error', dbErr);
+                       res.status(500).json({ error: 'DB upsert failed', details: dbErr.message });
+                     });
                 } catch (e) {
                   console.error('UploadRoute processing error', e);
                   res.status(500).json({ error: 'Error processing upload', details: e.message });

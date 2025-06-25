@@ -41,4 +41,26 @@ router.get('/insights', auth, async (req, res) => {
   }
 });
 
+// Route to fetch process path tree
+router.get('/path-tree', auth, async (req, res) => {
+  try {
+    const data = await UserData.findOne({ user: req.user.userId }).lean();
+    if (!data) return res.status(404).json({ error: 'No path tree found for user' });
+    res.json(data.pathTree || []);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Route to fetch individual ticket paths
+router.get('/case-paths', auth, async (req, res) => {
+  try {
+    const data = await UserData.findOne({ user: req.user.userId }).lean();
+    if (!data) return res.status(404).json({ error: 'No case paths found for user' });
+    res.json(data.casePaths || []);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports = router;

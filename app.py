@@ -194,6 +194,38 @@ def save_cleaned_log(df, output_path="output/cleaned_log.csv"):
     df.to_csv(output_path, index=False)
     print(f"Cleaned log saved to {output_path}")
 
+def show_path_tree(df):
+    tree = {}
+    case_activities = df.groupby('case_id')['activity'].apply(list)
+
+    # Build hierarchical tree with counts
+    for activity_list in case_activities:
+        current = tree
+        for act in activity_list:
+            if act not in current:
+                current[act] = {"_count": 0, "_children": {}}
+            current[act]["_count"] += 1
+            current = current[act]["_children"]
+
+    def format_tree(node):
+        return [
+            {
+                "name": name,
+                "count": data["_count"],
+                "children": format_tree(data["_children"]) if data["_children"] else []
+            }
+            for name, data in node.items()
+        ]
+
+    result = format_tree(tree)
+    save_json(result, "path_tree.json")
+
+    # Also save individual case paths for each ticket
+    case_paths = []
+    for case_id, activities in case_activities.items():
+        case_paths.append({"case_id": case_id, "path": activities})
+    save_json(case_paths, "case_paths.json")
+
 # --- Entry point ---
 def main():
    print("Enterprise Workflow Optimizer (Full Mode)")
@@ -220,6 +252,7 @@ def main():
    show_common_paths(df)
    show_step_durations(df)
    save_cleaned_log(df)
+   show_path_tree(df)
 
 if __name__ == "__main__":
    main()

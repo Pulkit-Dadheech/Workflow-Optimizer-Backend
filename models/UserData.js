@@ -14,6 +14,8 @@ const userDataSchema = new mongoose.Schema({
   caseDurations: { type: Schema.Types.Mixed, default: {} },
   slaViolations: { type: [Schema.Types.Mixed], default: [] },
   userDelays: { type: Schema.Types.Mixed, default: {} },
+  casePaths: { type: [Schema.Types.Mixed], default: [] },
+  pathTree: { type: [Schema.Types.Mixed], default: [] },
   updatedAt: { type: Date, default: Date.now }
 });
 

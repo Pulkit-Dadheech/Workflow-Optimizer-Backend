@@ -1,6 +1,0 @@
-case_id,total_steps,unique_users,unique_roles,total_story_points,num_reopens,num_qareviews,num_resolved,num_closed,total_duration_hours
-TKT001,6,3,3,5.0,0,1,1,1,28.0
-TKT002,10,3,3,8.0,1,2,2,1,75.25
-TKT003,6,3,3,3.0,0,1,1,1,24.25
-TKT004,6,3,3,13.0,0,1,1,1,77.0
-TKT005,6,3,3,5.0,0,1,1,1,25.0
